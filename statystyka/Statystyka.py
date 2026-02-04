@@ -1,4 +1,3 @@
-'''
 import numpy as np
 from scipy.stats import *
 
@@ -89,7 +88,6 @@ print("Rozstęp ćwiartkowy: ",np.quantile(wzrost,0.75)-np.quantile(wzrost,0.25)
 print("Odchylenie ćwiartkowe ",(np.quantile(wzrost,0.75)-np.quantile(wzrost,0.25))/2)
 print("\n")
 
-'''
 
 #zad 2
 
