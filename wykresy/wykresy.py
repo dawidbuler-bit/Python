@@ -4,14 +4,14 @@ import pandas as pd
 import seaborn as sns
 from scipy import stats
 
-12.1(a)
+#12.1(a)
 x = np.linspace(-10,10, 200)
 y = 1/(1+x**2)
 plt.plot(x,y,'g', label = '1/(1+x^2)')
 plt.legend()
 plt.show()
 
-12.1(b)
+#12.1(b)
 x = np.linspace(0,4)
 y1 = x**2
 y2 = np.exp(x)
@@ -22,7 +22,7 @@ plt.plot(x,y3, label = 'x^x')
 plt.legend()
 plt.show()
 
-12.1(c)
+#12.1(c)
 x = np.linspace(0,3)
 y1 = x**2
 y2 = np.exp(x)
@@ -37,35 +37,35 @@ axs[2].set_ylim(0,25)
 fig.legend(title='Wykres',loc = "upper center")
 plt.show()
 
-12.2
+#12.2
 titanic = pd.read_csv('titanic.csv', encoding = "UTF-8")
 
-12.2 (a)
+#12.2 (a)
 print(len(titanic[(titanic['Sex']=='female') & (titanic['Pclass']==1)& (titanic['Survived']==1)]))
 
-12.2 (b)
+#12.2 (b)
 print(np.mean(titanic[(titanic['Sex']=='male') &(titanic['Survived']==0)]['Age']))
 
-12.2 (c)
+#12.2 (c)
 colors = np.where(titanic['Sex']=='male','blue','red')
 titanic.plot.scatter(x = 'Age', y = 'Fare', c = colors)
 plt.show()
 
-12.2 (d)
+#12.2 (d)
 ((titanic[titanic['Survived']==1]).groupby(['Pclass']).size()/
 titanic.groupby(['Pclass']).size()).plot.bar()
 plt.show()
 
-12.3
+#12.3
 dane = sns.load_dataset("iris")
 print(dane)
 
-12.3(a)
+#12.3(a)
 sns.relplot(x = 'sepal_length', y ='sepal_width',data = dane, kind = 'scatter', hue = 'species')
 sns.catplot(x = 'species',y = 'petal_length', data = dane, kind = 'violin')
 plt.show()
 
-12.3(b)
+#12.3(b)
 sns.pairplot(dane, hue = 'species')
 reg = stats.linregress(dane['petal_width'],dane['petal_length'])
 print(reg)
